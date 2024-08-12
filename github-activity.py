@@ -28,18 +28,20 @@ events = [
     {'type': 'DeploymentEvents', 'data': DeploymentEvents},
     {'type': 'RepositoryEvents', 'data': RepositoryEvents}
 ]
-data = response.json()
-for i in range(0,len(data)):
-    for e in events:
-        if(data[i]['type']==str(e['type'])):
-            if(data[i]['repo']['name'] in e['data']):
-                e['data'][data[i]['repo']['name']]+=1
-            else:
-                e['data'][data[i]['repo']['name']]=1
-def display(type,dict):
-    for k,i in dict.items():
-        print(f"- {type} {i} commits in {k}")
+if response.status_code==200:
+    data = response.json()
+    for i in range(0,len(data)):
+        for e in events:
+            if(data[i]['type']==str(e['type'])):
+                if(data[i]['repo']['name'] in e['data']):
+                    e['data'][data[i]['repo']['name']]+=1
+                else:
+                    e['data'][data[i]['repo']['name']]=1
+    def display(type,dict):
+        for k,i in dict.items():
+            print(f"- {type} {i} commits in {k}")
 
-for d in events:
-    display(str(d['type']).replace('Event',''),d['data'])
-
+    for d in events:
+        display(str(d['type']).replace('Event',''),d['data'])
+else:
+    print("Error retrieving Github data!")
