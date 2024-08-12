@@ -2,8 +2,6 @@
     
   # GitHub Activity Tracker
   
-  <img src="https://api.dicebear.com/9.x/icons/svg?seed=Midnight&backgroundColor[]&icon=lightbulb" height="100" alt="avatar" />
-  
   [Overview](#🎯-overview) •
   [Features](#✨-features) •
   [Getting Started](#🚀-getting-started) •
