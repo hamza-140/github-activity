@@ -72,3 +72,7 @@ Displays the number of commits or interactions for each repository based on the 
   | `type`    | String | The type of event (e.g., Push, Issues).                        |
   | `dict` | dict | A dictionary containing repository names and counts.      |
   | `dict` | dict | A dictionary containing repository names and counts.      |
+
+---
+## CC
+https://roadmap.sh/projects/github-user-activity
